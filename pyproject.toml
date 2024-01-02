@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "comfyui-api-gateway"
+version = "0.1.0"
+description = "API gateway for serving a static workflow in ComfyUI via REST API"
+authors = ["Gian Klug <gian.klug@adfinis.com>"]
+license = "GPLv3"
+readme = "README.md"
+packages = [{include = "comfyui_api_gateway"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.108.0"
+uWSGI = "^2.0.23"
+httpx = "^0.26.0"
+websocket-client = "^1.7.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
