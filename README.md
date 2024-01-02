@@ -15,7 +15,7 @@ In ComfyUI, hit the gear icon next to the queue size and enable dev mode. Then, 
 Configurationi is done via environment variables:
 
 Auth:
-* `USER`: Basic auth username
+* `USERNAME`: Basic auth username
 * `PASSWORD`: Basic auth password
 
 Workflow:

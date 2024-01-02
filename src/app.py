@@ -18,9 +18,9 @@ security = HTTPBasic()
 logging.basicConfig(level=logging.DEBUG)
 
 # Authentication
-USER = os.environ.get("USERNAME", "default")
+USERNAME = os.environ.get("USERNAME", "default")
 PASSWORD = os.environ.get("PASSWORD", secrets.token_urlsafe(20))
-logging.info(f"API credentials: {USER}:{PASSWORD}")
+logging.info(f"API credentials: {USERNAME}:{PASSWORD}")
 
 # ComfyUI related things
 WORKFLOW_PATH = os.environ.get("WORKFLOW_PATH", "workflow_demo.json")
@@ -41,7 +41,7 @@ except json.JSONDecodeError:
 
 # Basic auth
 def verify_credentials(credentials: HTTPBasicCredentials = Depends(security)):
-    if credentials.username != USER or credentials.password != PASSWORD:
+    if credentials.username != USERNAME or credentials.password != PASSWORD:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect username or password",
